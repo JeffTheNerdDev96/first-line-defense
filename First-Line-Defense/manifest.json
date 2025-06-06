@@ -1,0 +1,27 @@
+
+{
+  "manifest_version": 3,
+  "name": "First Line Defense",
+  "description": "Security Check For Files or URLs ",
+  "version": "0.0.1.0",
+  "permissions":
+    [
+    "activeTab",
+    "scripting"
+    ],
+    "host_permissions":
+    [
+    "<all_urls>"
+    ],
+
+  "action":
+    {
+    "default_popup": "popup.html",
+    "default_icon": "logo.png"
+    },
+
+  "background":
+    {
+    "service_worker": "background.js"
+    }
+}

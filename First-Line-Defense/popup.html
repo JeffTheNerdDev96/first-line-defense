@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirusTotal Actions</title>
+    <style>
+        /* Basic styling for the popup */
+        body {
+            font-family: 'Inter', sans-serif; 
+            width: 250px; 
+            padding: 15px;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px; 
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        #scanUrlButton {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+
+        #scanUrlButton:hover {
+            background-color: #45a049;
+        }
+
+        #uploadFileButton {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+
+        #uploadFileButton:hover {
+            background-color: #0069d9;
+        }
+
+        .text-center { text-align: center; }
+        .p-4 { padding: 1rem; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .gap-4 { gap: 1rem; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+    </style>
+</head>
+<body class="p-4 bg-gray-100 flex flex-col items-center justify-center">
+    <div class="bg-white p-4 rounded-lg shadow-md flex flex-col gap-4 items-center">
+        <h1>Select Action for VirusTotal:</h1>
+        <button id="scanUrlButton">Scan Current URL</button>
+        <button id="uploadFileButton">Upload a File</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
