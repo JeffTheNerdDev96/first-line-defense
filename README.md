@@ -25,9 +25,9 @@ It simply provides a direct link to a third-party service
 
 ----------------------------------------------------------------------------
 
-Malware Domain Blocking In Progress
+<!-- Malware Domain Blocking In Progress, Trying to make it work with V3
 
-You can customize the blocked domains by editing the blocked.txt file.
+You can customize the blocked domains by editing the blocked.txt file. -->
 
 ----------------------------------------------------------------------------
 
