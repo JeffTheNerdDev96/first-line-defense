@@ -1,82 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets the character encoding for the document to UTF-8, supporting a wide range of characters. -->
     <meta charset="UTF-8">
+    <!-- Configures the viewport, crucial for responsive design.
+         - `width=device-width`: Sets the width of the viewport to the width of the device.
+         - `initial-scale=1.0`: Sets the initial zoom level when the page is first loaded. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VirusTotal Actions</title>
     <style>
-        /* Basic styling for the popup */
+        /* Basic styling for the entire popup body */
         body {
+            /* Specifies the preferred font family, with a fallback to generic sans-serif. */
             font-family: 'Inter', sans-serif; 
+            /* Sets a fixed width for the popup window. Chrome extension popups have a default max-width,
+               but explicitly setting it ensures consistent sizing. */
             width: 250px; 
+            /* Adds internal spacing (padding) around the content within the body. */
             padding: 15px;
+            /* Sets the background color of the popup. */
             background-color: #f0f2f5;
+            /* Sets the default text color for elements within the body. */
             color: #333;
+            /* Enables Flexbox layout for the body, allowing for flexible arrangement of its children. */
             display: flex;
+            /* Arranges flex items (children) in a vertical column. */
             flex-direction: column;
+            /* Adds space (gap) between flex items. */
             gap: 10px; 
+            /* Aligns flex items along the cross-axis (horizontally, since flex-direction is column) to the center. */
             align-items: center;
         }
 
+        /* Styling for the main heading (h1) within the popup */
         h1 {
+            /* Adjusts the font size relative to the parent font size. */
             font-size: 1.1em;
+            /* Adds space below the heading. */
             margin-bottom: 15px;
+            /* Sets the color of the heading text. */
             color: #2c3e50;
+            /* Centers the text within the heading element. */
             text-align: center;
         }
 
+        /* General styling for all button elements */
         button {
+            /* Makes the button take up 100% of the available width of its parent container. */
             width: 100%;
+            /* Adds internal padding to make the buttons larger and easier to click. */
             padding: 10px 15px;
+            /* Removes the default browser border from buttons. */
             border: none;
+            /* Applies rounded corners to the buttons for a softer appearance. */
             border-radius: 8px; 
+            /* Changes the mouse cursor to a pointer when hovering over the button, indicating it's clickable. */
             cursor: pointer;
+            /* Sets the font size of the button text. */
             font-size: 0.9em;
+            /* Sets the font weight for button text, making it bolder. */
             font-weight: 600;
+            /* Adds a smooth transition effect when background-color or transform properties change,
+               creating a visual animation on hover. */
             transition: background-color 0.3s ease, transform 0.2s ease;
+            /* Applies a subtle shadow to the buttons for depth. */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        /* Styling applied when a button is hovered over */
         button:hover {
+            /* Translates the button slightly upwards on the Y-axis, creating a subtle "lift" effect. */
             transform: translateY(-2px);
         }
 
+        /* Specific styling for the "Scan Current URL" button, identified by its ID */
         #scanUrlButton {
+            /* Sets the background color to a shade of green. */
             background-color: #4CAF50; /* Green */
+            /* Sets the text color to white for contrast. */
             color: white;
         }
 
+        /* Styling applied when the "Scan Current URL" button is hovered over */
         #scanUrlButton:hover {
+            /* Darkens the background color slightly on hover. */
             background-color: #45a049;
         }
 
+        /* Specific styling for the "Upload a File" button, identified by its ID */
         #uploadFileButton {
+            /* Sets the background color to a shade of blue. */
             background-color: #007bff; /* Blue */
+            /* Sets the text color to white for contrast. */
             color: white;
         }
 
+        /* Styling applied when the "Upload a File" button is hovered over */
         #uploadFileButton:hover {
+            /* Darkens the background color slightly on hover. */
             background-color: #0069d9;
         }
 
-        .text-center { text-align: center; }
-        .p-4 { padding: 1rem; }
-        .bg-gray-100 { background-color: #f3f4f6; }
-        .rounded-lg { border-radius: 0.5rem; }
-        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .gap-4 { gap: 1rem; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
+        /* Utility classes (common in frameworks like Tailwind CSS, though used here as standalone styles) */
+        .text-center { text-align: center; } /* Centers text */
+        .p-4 { padding: 1rem; } /* Adds 1rem (16px) of padding */
+        .bg-gray-100 { background-color: #f3f4f6; } /* Sets a light gray background color */
+        .rounded-lg { border-radius: 0.5rem; } /* Applies large rounded corners */
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); } /* Applies a medium shadow */
+        .flex { display: flex; } /* Enables Flexbox layout */
+        .flex-col { flex-direction: column; } /* Arranges flex items in a column */
+        .gap-4 { gap: 1rem; } /* Adds 1rem (16px) of space between flex items */
+        .items-center { align-items: center; } /* Centers flex items along the cross-axis */
+        .justify-center { justify-content: center; } /* Centers flex items along the main-axis */
     </style>
 </head>
+<!-- Body of the popup. Utility classes are applied directly for layout. -->
 <body class="p-4 bg-gray-100 flex flex-col items-center justify-center">
+    <!-- Main container for the popup's interactive content.
+         It's styled with a white background, padding, rounded corners, and a shadow,
+         and also uses Flexbox to arrange its inner elements. -->
     <div class="bg-white p-4 rounded-lg shadow-md flex flex-col gap-4 items-center">
+        <!-- Heading for the popup, prompting the user to select an action. -->
         <h1>Select Action for VirusTotal:</h1>
+        <!-- Button to trigger scanning the current URL. Its ID 'scanUrlButton' is used
+             by popup.js to attach an event listener. -->
         <button id="scanUrlButton">Scan Current URL</button>
+        <!-- Button to trigger opening the file upload page. Its ID 'uploadFileButton'
+             is also used by popup.js. -->
         <button id="uploadFileButton">Upload a File</button>
     </div>
+    <!-- Links the external JavaScript file (popup.js) to this HTML document.
+         This script contains the logic for handling button clicks and sending messages.
+         It's placed at the end of the <body> for performance, ensuring HTML elements
+         are parsed before the script tries to access them. -->
     <script src="popup.js"></script>
+    <!-- Optional: A comment suggesting where to add a script tag if a dedicated console
+         within the popup.html itself is needed for debugging. Typically, popup logs
+         appear in the background script's console in Chrome extensions. -->
 </body>
 </html>
