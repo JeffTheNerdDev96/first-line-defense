@@ -35,6 +35,5 @@ More Features May Come In the Future.
 
 Made By Jeff The Nerd (https://github.com/JeffTheNerdDev96)
 
-Project Link: https://github.com/JeffTheNerdDev96/secbrowsecheck
-
+https://github.com/JeffTheNerdDev96/first-line-defense
 
