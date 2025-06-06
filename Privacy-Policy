@@ -1,0 +1,41 @@
+Privacy Policy for First Line Defense Chrome Extension
+
+This Privacy Policy describes how the "First Line Defense" Chrome Extension ("the Extension") handles information. The Extension is designed to provide users with a quick and convenient way to perform security checks on active URLs or files using the VirusTotal service.
+
+1. Information We Collect
+
+The "First Line Defense" Extension is designed with user privacy in mind. It does not collect, store, or transmit any personally identifiable information (PII) about you or your browsing activity.
+
+No User Accounts: The Extension does not require or support user accounts, logins, or registration.
+
+No Data Storage: The Extension does not store any user data locally on your device or transmit it to any external servers operated by us.
+
+No Browser History Collection: The Extension does not access, collect, or store your browser history.
+
+2. How Information is Used (URLs and Files)
+
+When you interact with the Extension:
+
+"Scan Current URL" Action: When you click the "Scan Current URL" button, the Extension obtains the URL of your currently active tab. This URL is then directly opened in a new tab on the VirusTotal website (https://www.virustotal.com). The Extension does not process, store, or log this URL itself beyond the immediate action of opening it in VirusTotal. Your interaction with the VirusTotal website is subject to VirusTotal's own privacy policy and terms of service.
+
+"Upload a File" Action: When you click the "Upload a File" button, the Extension directly opens a new tab to the VirusTotal file upload page (https://www.virustotal.com/gui/home/upload). The Extension does not interact with your local file system, select files, or upload any files itself. Any file uploads are performed by you directly on the VirusTotal website, and your interaction is subject to VirusTotal's own privacy policy and terms of service.
+
+3. Permissions Used
+
+The Extension requests the following permissions to function:
+
+activeTab: This permission allows the Extension to temporarily access the URL of your currently active tab only when you explicitly click the Extension's toolbar icon. This access is granted solely for the purpose of obtaining the URL to send to VirusTotal for scanning.
+
+scripting: This permission is used in conjunction with activeTab and host_permissions to programmatically retrieve the URL of the active tab. It does not allow the Extension to inject arbitrary scripts or modify web content without user consent.
+
+host_permissions (<all_urls>): This permission is necessary for the Extension to reliably obtain the URL from any webpage you might be visiting, ensuring comprehensive scanning capabilities through VirusTotal. The Extension only uses this permission to read the current tab's URL for the user-initiated scan. It does not inject scripts, collect data, or modify content from any visited pages.
+
+4. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes.
+
+5. Contact Us
+
+If you have any questions or concerns about this Privacy Policy or the Extension's privacy practices, please contact us at [Your Contact Email/Method Here].
+
+Last Updated: June 6, 2025
